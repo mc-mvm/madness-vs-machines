@@ -1,0 +1,688 @@
+WaveSchedule
+{
+    Templates
+    {
+        G_Gatebot_Soldier_PainTrain_Giant
+        {
+            Name "Speak Softly"
+            Class Soldier
+            ClassIcon demo_paintrain
+            Health 3800
+
+            EventChangeAttributes
+            {
+                Default
+                {
+                    Attributes IgnoreFlag
+                    Attributes MiniBoss
+                    BehaviorModifiers Push
+                    Tag bot_giant
+                    Tag bot_gatebot
+                    Tag nav_prefer_gate1_flank
+                    Item "The Pain Train"
+                    Item "The Mantreads"
+                    Item "MvM GateBot Light Soldier"
+                    Skill Expert
+                    WeaponRestrictions MeleeOnly
+                    MaxVisionRange 1200
+
+                    ItemAttributes
+                    {
+                        ItemName "The Pain Train"
+                        "fire rate bonus" 0.5
+                        "melee range multiplier" 3
+                        "apply look velocity on damage" 100
+                        "damage causes airblast" 1
+                        "damage penalty" 0.33
+                        "killstreak tier" 2
+                        "killstreak idleeffect" 1
+                    }
+
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.5
+                        "damage force reduction" 0.2
+                        "airblast vulnerability multiplier" 0.2
+                        "override footstep sound set" 2
+                        "hand scale" 3
+                    }
+                }
+
+                RevertGateBotsBehavior
+                {
+                    Attributes MiniBoss
+                    Tag bot_giant
+                    Item "The Pain Train"
+                    Item "The Mantreads"
+                    Item "Armored Authority"
+                    Skill Expert
+                    WeaponRestrictions MeleeOnly
+                    MaxVisionRange 1200
+
+                    ItemAttributes
+                    {
+                        ItemName "The Pain Train"
+                        "fire rate bonus" 0.5
+                        "melee range multiplier" 2.5
+                        "apply look velocity on damage" -100
+                        "damage penalty" 0.33
+                        "killstreak tier" 2
+                        "killstreak idleeffect" 1
+                    }
+
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.5
+                        "damage force reduction" 0.2
+                        "airblast vulnerability multiplier" 0.2
+                        "override footstep sound set" 2
+                        "hand scale" 3
+                    }
+                }
+            }
+        }
+
+        G_Attrbot_Pyro_Flare_Giant
+        {
+            Name "Giant Flare Master"
+            Class Pyro
+            ClassIcon pyro_flare_giant
+            Health 14000
+            Scale 1.9
+            
+            EventChangeAttributes
+            {
+                Default
+                {
+                    Attributes MiniBoss
+                    Attributes UseBossHealthBar
+                    WeaponRestrictions SecondaryOnly
+                    Skill Expert
+                    Item "The Flare Gun"
+                    Item "Pyro's Boron Beanie"
+                    Item "The Sengoku Scorcher"
+                    Tag bot_giant
+                    Tag bot_attrbot
+
+                    ItemAttributes
+                    {
+                        ItemName "The Flare Gun"
+                        "fire rate bonus" 0.3
+                    }
+
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.35
+                        "damage force reduction" 0.1
+                        "airblast vulnerability multiplier" 0.1
+                        "override footstep sound set" 7
+                    }
+                }
+				
+                BotAttributes1
+                {
+                    Attributes MiniBoss
+                    Attributes UseBossHealthBar
+                    WeaponRestrictions SecondaryOnly
+                    Skill Expert
+                    Item "The Flare Gun"
+                    Item "Pyro's Boron Beanie"
+                    Item "The Sengoku Scorcher"
+                    Tag bot_giant
+                    Tag bot_attrbot
+
+                    ItemAttributes
+                    {
+                        ItemName "The Flare Gun"
+                        "fire rate bonus" 0.3
+                    }
+
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.35
+                        "damage force reduction" 0.1
+                        "airblast vulnerability multiplier" 0.1
+                        "override footstep sound set" 7
+                    }
+                }
+
+                BotAttributes2
+                {
+                    Attributes MiniBoss
+                    Attributes UseBossHealthBar
+                    WeaponRestrictions SecondaryOnly
+                    Skill Expert
+                    Item "The Flamboyant Flamenco"
+                    Item "The Sengoku Scorcher"
+                    Item "The Scorch Shot"
+                    Tag bot_giant
+                    Tag bot_attrbot
+
+                    ItemAttributes
+                    {
+                        ItemName "The Scorch Shot"
+                        "fire rate bonus" 0.1
+                        "faster reload rate" 0.25
+                        "projectile speed decreased" 0.55
+                        "projectile spread angle penalty" 10
+                        "damage penalty" 0.5
+                    }
+
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.35
+                        "damage force reduction" 0.1
+                        "airblast vulnerability multiplier" 0.1
+                        "override footstep sound set" 7
+                    }
+                }
+
+                BotAttributes3
+                {
+                    Attributes MiniBoss
+                    Attributes UseBossHealthBar
+                    WeaponRestrictions SecondaryOnly
+                    Skill Expert
+                    Item "The MK 50"
+                    Item "The Sengoku Scorcher"
+                    Item "The Manmelter"
+                    Tag bot_giant
+                    Tag bot_attrbot
+
+                    ItemAttributes
+                    {
+                        ItemName "The Manmelter"
+                        "damage bonus" 2.5
+                        "weapon burn dmg increased" 1.5
+                        "damage causes airblast" 1
+                        "apply z velocity on damage" 500
+                    }
+
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.35
+                        "damage force reduction" 0.1
+                        "airblast vulnerability multiplier" 0.1
+                        "override footstep sound set" 7
+                    }
+                }
+            }
+        }
+
+        G_Pyro_Detonator
+        {
+            Name "Detonator Pyro"
+            Class Pyro
+            ClassIcon pyro_flare
+            Skill Hard
+            Item "Pyro's Boron Beanie"
+            Item "The Detonator"
+            WeaponRestrictions SecondaryOnly
+        }
+
+        G_Demo_Zatoichi
+        {
+            Name "Half-Zatoichi Demoknight"
+            Class Demoman
+            ClassIcon demoknight_samurai
+            Skill Normal
+            Item "The Chargin' Targe"
+            Item "The Half-Zatoichi"
+            Item "Demo Kabuto"
+            WeaponRestrictions MeleeOnly
+        }
+
+        G_Gatebot_Demo_Paintrain_Giant
+        {
+            Name "Giant Pain Train Demoknight"
+            Class Demoman
+            ClassIcon demo_paintrain
+            Health 3300
+
+            EventChangeAttributes
+            {
+                Default
+                {
+                    Attributes MiniBoss
+                    Attributes IgnoreFlag
+                    BehaviorModifiers Push
+                    Tag bot_giant
+                    Tag bot_gatebot
+                    Tag nav_prefer_gate1_flank
+                    Item "The Pain Train"
+                    Item "The Chargin' Targe"
+                    Item "Ali Baba's Wee Booties"
+                    Item "MvM GateBot Light Demoman"
+                    Item "The Dark Age Defender"
+                    Skill Expert
+                    WeaponRestrictions MeleeOnly
+                    MaxVisionRange 500
+
+                    ItemAttributes
+                    {
+                        ItemName "The Chargin' Targe"
+                        "attack not cancel charge" 1
+                    }
+
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.5
+                        "damage force reduction" 0.25
+                        "airblast vulnerability multiplier" 0.25
+                        "override footstep sound set" 7
+                    }
+                }
+
+                RevertGateBotsBehavior
+                {
+                    Attributes MiniBoss
+                    Tag bot_giant
+                    Item "The Pain Train"
+                    Item "The Chargin' Targe"
+                    Item "Ali Baba's Wee Booties"
+                    Item "The Glasgow Great Helm"
+                    Item "The Dark Age Defender"
+                    Skill Expert
+                    WeaponRestrictions MeleeOnly
+                    MaxVisionRange 1000
+
+                    ItemAttributes
+                    {
+                        ItemName "The Pain Train"
+                        "attach particle effect" 1
+                        "fire rate bonus" 0.5
+                        "damage penalty" 0.5
+                        "melee range multiplier" 1.5
+                        "hit self on miss" 1
+                    }
+
+                    ItemAttributes
+                    {
+                        ItemName "The Chargin' Targe"
+                        "attack not cancel charge" 1
+                    }
+
+                    CharacterAttributes
+                    {
+                        "move speed bonus" 0.5
+                        "damage force reduction" 0.25
+                        "airblast vulnerability multiplier" 0.25
+                        "override footstep sound set" 7
+                        "hand scale" 1.25
+                    }
+                }
+            }
+        }
+
+        G_Heavy_Apoco_Fist
+        {
+            Name "Apocalypse Champ"
+            Class Heavyweapons
+            ClassIcon heavy_Apocofist
+            Skill Hard
+            Item "Pugilist's Protector"
+            Item "Apoco-fists"
+            WeaponRestrictions MeleeOnly
+
+            ItemAttributes
+            {
+                ItemName "Apoco-fists"
+                "damage causes airblast" 1
+                "apply z velocity on damage" 225
+            }
+
+            ItemAttributes
+            {
+                ItemName "Pugilist's Protector"
+                "set item tint rgb" 6901050
+            }
+        }
+
+        G_Heavy_GRU
+        {
+            Name "Featherweight Champ"
+            Class Heavyweapons
+            ClassIcon heavy_gru
+            Skill Normal
+            Item "Gloves of Running Urgently MvM"
+            Item "Pugilist's Protector"
+            Item "The Heavy-Weight Champ"
+            WeaponRestrictions MeleeOnly
+
+            ItemAttributes
+            {
+                ItemName "Gloves of Running Urgently MvM"
+                "mark for death" 1
+            }
+        }
+
+        G_Heavy_FireDragon
+        {
+            Name "Fire Dragon Heavy"
+            Class Heavyweapons
+            ClassIcon heavy_heater
+            Skill Hard
+            Item "The Huo Long Heatmaker"
+            Item "The Bunsen Brave"
+
+            ItemAttributes
+            {
+                ItemName "The Huo Long Heatmaker"
+                "set damagetype ignite" 1
+                "fire rate penalty" 5
+                "damage penalty" 1
+                "override projectile type" 2
+                "projectile speed decreased" 0.85
+                "mini rockets" 1
+            }
+        }
+
+        G_Heavy_FireDeagon_Giant
+        {
+            Name "Giant Fire Dragon Heavy"
+            Class Heavyweapons
+            ClassIcon heavy_heater_giant
+            Health 5000
+            Skill Expert
+            Attributes MiniBoss
+            Item "The Huo Long Heatmaker"
+            Item "The Bunsen Brave"
+
+            ItemAttributes
+            {
+                ItemName "The Huo Long Heatmaker"
+                "set damagetype ignite" 1
+                "damage penalty" 1
+                "override projectile type" 2
+                "mini rockets" 1
+                "minicrit vs burning player" 1
+            }
+
+            CharacterAttributes
+            {
+                "move speed bonus" 0.4
+                "damage force reduction" 0.15
+                "airblast vulnerability multiplier" 0.15
+                "override footstep sound set" 5
+            }
+        }
+
+        G_Medic_Crossbow_HealonHit
+        {
+            Name "Witchdoctor"
+            Class Medic
+            ClassIcon medic_crossbow
+            Skill Hard
+            Health 300
+            Scale 1.25
+            Item "The Crusader's Crossbow"
+            Item "Mask of the Shaman"
+            MaxVisionRange 1000
+
+            ItemAttributes
+            {
+                ItemName "The Crusader's Crossbow"
+                "heal on hit for rapidfire" 50
+                "projectile penetration" 1
+            }
+        }
+
+        G_Medic_Crossbow_Giant
+        {
+            Name "Giant Witchdoctor"
+            Class Medic
+            ClassIcon medic_crossbow_giant
+            Skill Expert
+            Health 4500
+            Attributes MiniBoss
+            Item "The Crusader's Crossbow"
+            Item "Mask of the Shaman"
+            MaxVisionRange 1000
+
+            ItemAttributes
+            {
+                ItemName "The Crusader's Crossbow"
+                "auto fires when full" 1
+                "auto fires full clip" 1
+                "clip size upgrade atomic" 3
+                "fire rate bonus" 0.1
+                "faster reload rate" 0.33
+                "projectile spread angle penalty" 2
+            }
+
+            CharacterAttributes
+            {
+                "move speed bonus" 0.5
+                "damage force reduction" 0.15
+                "airblast vulnerability multiplier" 0.15
+            }
+        }
+
+        G_Attrbot_Medic_Vac
+        {
+            Name "Random Vaccinator Medic"
+            Class Medic
+            ClassIcon medic_bullet
+            
+            EventChangeAttributes
+            {
+                Default
+                {
+                    Item "Medic's Mountain Cap"
+                    Skill Expert
+                    WeaponRestrictions SecondaryOnly
+                    Attributes SpawnWithFullCharge
+                    Attributes IgnoreEnemies
+                    
+                    ItemAttributes
+                    {
+                        ItemName TF_WEAPON_MEDIGUN
+                        "medigun charge is resists" 3
+                        "medigun bullet resist passive" 0.75
+                        "medigun bullet resist deployed" 0.75
+                        "lunchbox adds minicrits" 3
+                    }
+
+                    CharacterAttributes
+                    {
+                        "bot medic uber health threshold" 149
+                        "voice pitch scale" 0
+                    }
+                }
+				
+                BotAttributes1
+                {
+                    Item "Medic's Mountain Cap"
+                    Skill Expert
+                    WeaponRestrictions SecondaryOnly
+                    Attributes SpawnWithFullCharge
+                    Attributes IgnoreEnemies
+                    
+                    ItemAttributes
+                    {
+                        ItemName TF_WEAPON_MEDIGUN
+                        "medigun charge is resists" 3
+                        "medigun bullet resist passive" 0.75
+                        "medigun bullet resist deployed" 0.75
+                        "lunchbox adds minicrits" 3
+                    }
+
+                    CharacterAttributes
+                    {
+                        "bot medic uber health threshold" 149
+                        "voice pitch scale" 0
+                    }
+                }
+
+                BotAttributes2
+                {
+                    Item "Medic's Mountain Cap"
+                    Skill Expert
+                    WeaponRestrictions SecondaryOnly
+                    Attributes SpawnWithFullCharge
+                    Attributes IgnoreEnemies
+
+                    ItemAttributes
+                    {
+                        ItemName TF_WEAPON_MEDIGUN
+                        "medigun charge is resists" 5
+                        "medigun fire resist passive" 0.75
+                        "medigun fire resist deployed" 0.75
+                        "lunchbox adds minicrits" 3
+                    }
+
+                    CharacterAttributes
+                    {
+                        "bot medic uber health threshold" 149
+                        "voice pitch scale" 0
+                    }
+                }
+            }
+        }
+
+        G_Gatebot_Sniper_Huntsman_9
+        {
+            Name "Pincushion Bowman"
+            Class Sniper
+            ClassIcon sniper_bow_multi
+            
+            EventChangeAttributes
+            {
+                Default
+                {
+                    Attributes IgnoreFlag
+                    BehaviorModifiers Push
+                    Tag bot_gatebot
+                    Tag nav_prefer_gate1_flank
+                    Item "The Huntsman"
+                    Item "Archers Groundings"
+                    Item "MvM GateBot Light Sniper"
+                    Skill Hard
+
+                   ItemAttributes
+                    {
+                        ItemName "The Huntsman"
+                        "dmg penalty vs players" 0.075
+                        "dmg penalty vs buildings" 0.075
+                        "fire rate bonus" 0.1
+                        "dmg pierces resists absorbs" 1
+                    }
+                }
+
+                RevertGateBotsBehavior
+                {
+                    Item "The Huntsman"
+                    Item "Archers Groundings"
+                    Item "The Smissmas Caribou"
+                    Skill Hard
+
+                   ItemAttributes
+                    {
+                        ItemName "The Huntsman"
+                        "dmg penalty vs players" 0.075
+                        "dmg penalty vs buildings" 0.075
+                        "fire rate bonus" 0.1
+                        "dmg pierces resists absorbs" 1
+                    }
+                }
+            }
+        }
+
+        G_Sniper_Huntsman_Fire
+        {
+            Name "Flame-tipped Bowman"
+            Class Sniper
+            ClassIcon sniper_bow_ignite
+            Skill Hard
+            Item "The Huntsman"
+            Item "The Archers Groundings"
+            Item "The Smissmas Caribou"
+
+            ItemAttributes
+            {
+                ItemName "The Huntsman"
+                "set damagetype ignite" 1
+                "dmg penalty vs players" 0.5 //reduces base damage to 60 and afterburn to 2/tick
+                "fire rate penalty" 1.25
+                "attach particle effect" 13
+            }
+        }
+
+        G_Sniper_Huntsman_Fire_Giant
+        {
+            Name "Giant Flame-tipped Bowman"
+            Class Sniper
+            ClassIcon sniper_bow_ignite_giant
+            Skill Expert
+            Health 3000
+            Item "The Huntsman"
+            Item "The Archers Groundings"
+            Item "Randolph the Blood-Nosed Caribou"
+            Attributes MiniBoss
+            Tag bot_giant
+
+            ItemAttributes
+            {
+                ItemName "The Huntsman"
+                "set damagetype ignite" 1
+                "dmg penalty vs players" 0.75 //reduces base damage to 90 and afterburn to 3/tick
+                "fire rate penalty" 1.25
+                "attach particle effect" 13
+                "killstreak tier" 2
+                "killstreak idleeffect" 1
+            }
+
+            ItemAttributes
+            {
+                ItemName "Randolph the Blood-Nosed Caribou"
+                "attach particle effect" 13
+            }
+
+            CharacterAttributes
+            {
+                "move speed bonus" 0.4
+                "damage force reduction" 0.35
+                "airblast vulnerability multiplier" 0.35
+                "override footstep sound set" 7
+            }
+        }
+
+        G_Sniper_Huntsman_Bleed_Giant
+        {
+            Name "Giant Barb-tipped Bowman"
+            Class Sniper
+            ClassIcon sniper_huntsman_bleed_giant
+            Skill Expert
+            Health 3000
+            Item "The Huntsman"
+            Item "The Archers Groundings"
+            Item "Randolph the Blood-Nosed Caribou"
+            Attributes MiniBoss
+            Tag bot_giant
+
+            ItemAttributes
+            {
+                ItemName "The Huntsman"
+                "bleeding duration" 10 //total 60 damage bleed
+                "dmg penalty vs players" 0.75 //reduces base damage to 90 and bleed to 3/tick
+                "fire rate penalty" 1.25
+                "killstreak tier" 2
+                "killstreak idleeffect" 1
+            }
+
+            ItemAttributes
+            {
+                ItemName "Randolph the Blood-Nosed Caribou"
+                "attach particle effect" 43
+            }
+
+            CharacterAttributes
+            {
+                "move speed bonus" 0.4
+                "damage force reduction" 0.35
+                "airblast vulnerability multiplier" 0.35
+                "override footstep sound set" 7
+            }
+        }
+    }
+}
